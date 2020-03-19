@@ -1,3 +1,6 @@
+import $ from jQuery_3_4_1.js
+
+
 let btnAddNote = document.querySelector('#addNewContent');
 let inputNewNote = document.querySelector('#newContent')
 let listNote = document.querySelector('.content')
