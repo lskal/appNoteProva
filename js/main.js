@@ -1,4 +1,4 @@
-import $ from jQuery_3_4_1.js
+import $ from './jQuery_3_4_1'
 
 
 let btnAddNote = document.querySelector('#addNewContent');
