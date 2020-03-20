@@ -1,4 +1,4 @@
-import $ from './jQuery_3_4_1'
+/* import $ from './jQuery_3_4_1' */
 
 
 let btnAddNote = document.querySelector('#addNewContent');
@@ -12,32 +12,21 @@ btnAddNote.addEventListener('click', function() {
 function addNote(contentNote) {
     let newNote = document.createElement('li');
     newNote.textContent = contentNote;
-
-    let btnRemoveNote = document.createElement('button');
-    btnRemoveNote.setAttribute("id", "btnRemove");
-    btnRemoveNote.textContent = 'Elimina';
-    newNote.appendChild(btnRemoveNote);
     listNote.appendChild(newNote);
     inputNewNote.value = "";
 
-    btnRemoveNote.addEventListener('click', function(){
+    /* let btnRemoveNote = document.createElement('button');
+    btnRemoveNote.setAttribute("id", "btnRemove");
+    btnRemoveNote.textContent = 'Elimina'; */
+    /* newNote.appendChild(btnRemoveNote); */
+    /* btnRemoveNote.addEventListener('click', function(){
         this.parentNode.remove();
-    })
+    })  */
 };
 
-class appNote {
-    constructor(content, date) {
-        this.content = content;
-        this.date = date;
-    }
-    
-    init() {
-    addNota();
-    }
+function appNote() {
 
-    addNota() {
 
-    }
 }
 
 /* Defining class using es6 
