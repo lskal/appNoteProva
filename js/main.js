@@ -24,9 +24,15 @@ function addNote(contentNote) {
     })  */
 };
 
-function appNote() {
+function AppNote(content) {
+    let btnAddNote = document.querySelector('#addNewContent');
 
-
+    this.content = content
+    this.addNote = function (content) {
+        document.addEventListener('click', function () {
+            //ricevo il testo e lo aggiungo qui
+        })
+    }
 }
 
 /* Defining class using es6 
