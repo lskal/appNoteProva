@@ -1,21 +1,43 @@
 /* import $ from './jQuery_3_4_1' */
 
-let btnAddNote = document.querySelector('#addNewContent');
+const btnAddNote = document.querySelector('#addNewContent');
 let inputNewNote = document.querySelector('#newContent');
+const listNote = document.querySelector('.content');
+let conter = 0;
 
 btnAddNote.addEventListener('click', function () {
     AppNote(inputNewNote.value);
 });
 
 function AppNote(content) {
-    let listNote = document.querySelector('.content');
 
-        let newNote = document.createElement('li');
-        newNote.textContent = content;
-        listNote.appendChild(newNote);
-        content.value = "";
+    const newNote = document.createElement('li');
+    conter++;
+    newNote.setAttribute("class", "list-" + conter);
+    newNote.setAttribute("onclick", "removeElement(this)")
+    newNote.textContent = content;
+    listNote.appendChild(newNote);
+    inputNewNote.value = "";
 
-        //Il return in genere lo usi quando una funzione deve finire il suo percorso ritornando un valore "preciso" o qualcosa che poi devi usare, quindi poi si ferma. In questo caso puoi anche usarlo ma non hai bisogno anche perché questa è una funzione generica che userai anche dopo 
+    //Il return in genere lo usi quando una funzione deve finire il suo percorso ritornando un valore "preciso" o qualcosa che poi devi usare, quindi poi si ferma. In questo caso puoi anche usarlo ma non hai bisogno anche perché questa è una funzione generica che userai anche dopo 
+}
+
+function removeElement(el) {
+    const element = el;
+    element.remove();
+}
+
+/* inputNewNote.addEventListener("keyup", function name(params) {
+    
+}) */
+
+function clickOnEnter() {
+    inputNewNote.addEventListener("keyup", function (e) {
+        if (e.keyCode === 13) {
+            e.preventDefault();
+            document.querySelector('btnAddNote').click();
+        }
+    });
 }
 
 /*let btnAddNote = document.querySelector('#addNewContent');
