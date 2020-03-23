@@ -1,23 +1,21 @@
 /* import $ from './jQuery_3_4_1' */
 
 let btnAddNote = document.querySelector('#addNewContent');
-let inputNewNote = document.querySelector('#newContent').value;
+let inputNewNote = document.querySelector('#newContent');
 
 btnAddNote.addEventListener('click', function () {
-    AppNote.addNewNote(inputNewNote);
+    AppNote(inputNewNote.value);
 });
 
 function AppNote(content) {
     let listNote = document.querySelector('.content');
 
-    this.content = content;
-    this.addNewNote = function() {
         let newNote = document.createElement('li');
         newNote.textContent = content;
         listNote.appendChild(newNote);
         content.value = "";
-        return newNote;
-    }
+
+        //Il return in genere lo usi quando una funzione deve finire il suo percorso ritornando un valore "preciso" o qualcosa che poi devi usare, quindi poi si ferma. In questo caso puoi anche usarlo ma non hai bisogno anche perché questa è una funzione generica che userai anche dopo 
 }
 
 /*let btnAddNote = document.querySelector('#addNewContent');
