@@ -3,17 +3,23 @@
 const btnAddNote = document.querySelector('#addNewContent');
 let inputNewNote = document.querySelector('#newContent');
 const listNote = document.querySelector('.content');
-let conter = 0;
+// let conter = 0;
 
 btnAddNote.addEventListener('click', function () {
     AppNote(inputNewNote.value);
 });
 
+inputNewNote.addEventListener("keydown", function (e) {
+    if (e.keyCode === 13) {
+        clickOnEnter(e);
+    }
+})
+
 function AppNote(content) {
 
     const newNote = document.createElement('li');
-    conter++;
-    newNote.setAttribute("class", "list-" + conter);
+    // conter++;
+    // newNote.setAttribute("class", "list-" + conter);
     newNote.setAttribute("onclick", "removeElement(this)")
     newNote.textContent = content;
     listNote.appendChild(newNote);
@@ -27,18 +33,26 @@ function removeElement(el) {
     element.remove();
 }
 
-/* inputNewNote.addEventListener("keyup", function name(params) {
-    
-}) */
-
-function clickOnEnter() {
-    inputNewNote.addEventListener("keyup", function (e) {
-        if (e.keyCode === 13) {
-            e.preventDefault();
-            document.querySelector('btnAddNote').click();
-        }
-    });
+function clickOnEnter(e) {
+    e.preventDefault();
+    btnAddNote.click();
 }
+
+// cose da fare:
+/* 
+1. bottone rimuovi
+2. localstorege
+3. ecc...
+*/
+
+
+
+
+
+
+
+
+
 
 /*let btnAddNote = document.querySelector('#addNewContent');
 let inputNewNote = document.querySelector('#newContent')
