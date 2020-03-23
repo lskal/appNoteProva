@@ -4,8 +4,7 @@ let btnAddNote = document.querySelector('#addNewContent');
 let inputNewNote = document.querySelector('#newContent').value;
 
 btnAddNote.addEventListener('click', function () {
-    // AppNote.addNewNote(inputNewNote);
-    AppNote.call({}, inputNewNote);
+    AppNote.addNewNote(inputNewNote);
 });
 
 function AppNote(content) {
