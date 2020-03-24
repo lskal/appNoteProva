@@ -5,11 +5,11 @@ const btnAddNote = document.querySelector('#addNewContent');
 let inputNewNote = document.querySelector('#newContent');
 const listNote = document.querySelector('.content');
 
-//if you want the counter set 'true' swithCounterOnOff, else set 'false;
+//if you want use the counter set 'true' swithCounterOnOff, else set 'false';
 const swithCounterOnOff = false;
 let counter = 0;
 
-//set max number of characters in the input (max number before list start a new paragraph is: 98)
+//set max number of characters in the input (max number before list start a new paragraph is: maxCharacters = 98)
 const maxCharacters = 64;
 
 //set key to enter new message (13 = ENTER key)
