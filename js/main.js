@@ -9,8 +9,8 @@ const listNote = document.querySelector('.content');
 const swithCounterOnOff = false;
 let counter = 0;
 
-//set max number of characters in the input
-const maxCharacters = 108;
+//set max number of characters in the input (max number before list start a new paragraph is: 98)
+const maxCharacters = 64;
 
 //set key to enter new message (13 = ENTER key)
 const keyToEnter = 13;
@@ -26,31 +26,32 @@ inputNewNote.addEventListener("keydown", function (e) {
     }
 })
 
-// btnRemoveNote.addEventListener('click', function () {
-//     this.parentNode.remove();
-// })
-
-
 //function
 function AppNote(content) {
-
-    if (inputNewNote.value.length < maxCharacters) {
-
+    if (inputNewNote.value.length <= maxCharacters) {
         const newNote = document.createElement('li');
         newNote.setAttribute("onclick", "removeElement(this)")
         newNote.textContent = content;
         listNote.appendChild(newNote);
         inputNewNote.value = "";
         if (swithCounterOnOff) {
-
             counter++;
             newNote.setAttribute("class", "list-" + counter);
         }
+        
+        // append button delete
+        let btnRemoveNote = document.createElement('button');
+        btnRemoveNote.setAttribute("id", "btnRemove");
+        btnRemoveNote.textContent = 'Elimina';
+        newNote.appendChild(btnRemoveNote);
+        btnRemoveNote.addEventListener('click', function(){
+            this.parentNode.remove();
+        })
 
         //Il return in genere lo usi quando una funzione deve finire il suo percorso ritornando un valore "preciso" o qualcosa che poi devi usare, quindi poi si ferma. In questo caso puoi anche usarlo ma non hai bisogno anche perché questa è una funzione generica che userai anche dopo 
 
     } else {
-        alert('message too log, try to write a shorter one next');
+        alert("Text you written is too log, try to write a shorter one next. Text can't be longer that " + maxCharacters + " characters");
     }
 }
 
@@ -64,19 +65,11 @@ function clickOnEnter(e) {
     btnAddNote.click();
 }
 
-function removeBtnElement() {
-    let btnRemoveNote = document.createElement('button');
-    btnRemoveNote.setAttribute("id", "btnRemove");
-    newNote.setAttribute("onclick", "removeBtnElement(this)")
-    btnRemoveNote.textContent = 'Elimina';
-    newNote.appendChild(btnRemoveNote);
-}
-
 // cose da fare:
 /*
-1. bottone rimuovi
-2. localstorege
-3. ecc...
+1. localstorege
+2. use constants.js
+3. ......
 */
 
 

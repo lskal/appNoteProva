@@ -21,3 +21,7 @@ body {
 .content {
     margin-top: 50px;
 }
+
+#btnRemove {
+    margin-left: 1%;
+}
