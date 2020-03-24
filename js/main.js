@@ -1,5 +1,6 @@
-/* import $ from './jQuery_3_4_1' */
+// import $ from './jquery-3.4.1';
 
+//global variables
 const btnAddNote = document.querySelector('#addNewContent');
 let inputNewNote = document.querySelector('#newContent');
 const listNote = document.querySelector('.content');
@@ -8,12 +9,19 @@ const listNote = document.querySelector('.content');
 const swithCounterOnOff = false;
 let counter = 0;
 
+//set max number of characters in the input
+const maxCharacters = 108;
+
+//set key to enter new message (13 = ENTER key)
+const keyToEnter = 13;
+
+//events
 btnAddNote.addEventListener('click', function () {
     AppNote(inputNewNote.value);
 });
 
 inputNewNote.addEventListener("keydown", function (e) {
-    if (e.keyCode === 13) {
+    if (e.keyCode === keyToEnter) {
         clickOnEnter(e);
     }
 })
@@ -22,16 +30,19 @@ inputNewNote.addEventListener("keydown", function (e) {
 //     this.parentNode.remove();
 // })
 
+
+//function
 function AppNote(content) {
-    const maxCharacters = 108;
 
     if (inputNewNote.value.length < maxCharacters) {
+
         const newNote = document.createElement('li');
         newNote.setAttribute("onclick", "removeElement(this)")
         newNote.textContent = content;
         listNote.appendChild(newNote);
         inputNewNote.value = "";
         if (swithCounterOnOff) {
+
             counter++;
             newNote.setAttribute("class", "list-" + counter);
         }
