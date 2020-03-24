@@ -81,31 +81,6 @@ function clickOnEnter(e) {
 
 
 
-/*let btnAddNote = document.querySelector('#addNewContent');
-let inputNewNote = document.querySelector('#newContent')
-let listNote = document.querySelector('.content')
-
-btnAddNote.addEventListener('click', function () {
-    addNote(inputNewNote.value);
-});
-
-function addNote(contentNote) {
-    //aggiuni nota
-    let newNote = document.createElement('li');
-    newNote.textContent = contentNote;
-    listNote.appendChild(newNote);
-    inputNewNote.value = "";
-
-    //rimuovi nota
-    let btnRemoveNote = document.createElement('button');
-    btnRemoveNote.setAttribute("id", "btnRemove");
-    btnRemoveNote.textContent = 'Elimina';
-    newNote.appendChild(btnRemoveNote);
-    btnRemoveNote.addEventListener('click', function(){
-        this.parentNode.remove();
-    })
-};*/
-
 /* Defining class using es6
 class Vehicle {
     constructor(name, maker, engine) {
