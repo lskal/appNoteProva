@@ -4,10 +4,10 @@
 const btnAddNote = document.querySelector('#addNewContent');
 let inputNewNote = document.querySelector('#newContent');
 const listNote = document.querySelector('.content');
+let counter = 0;
 
 //if you want use the counter set 'true' swithCounterOnOff, else set 'false';
 const swithCounterOnOff = false;
-let counter = 0;
 
 //set removeOnClick to 'true' if you want to delete list elements on click on it, else 'false'
 const removeOnClick = true;
@@ -74,8 +74,9 @@ function clickOnEnter(e) {
 // cose da fare:
 /*
 1. localstorege
-2. use constants.js
-3. ......
+2. bottone reset totale (compreso il local storege)
+3. bottone rispistina ultima cancellazzione
+4. use constants.js
 */
 
 
